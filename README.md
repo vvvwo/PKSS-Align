@@ -1,44 +1,73 @@
-# PKSS-Align
+# PKSS-Align: A New Registration Method
 
-It is an implementation for “PKSS-Measurement: A Robust Point Cloud Registration\\based on Pre-Kendall Shape Space”
+It is an implementation for the paper “PKSS-Align”. The source code will be released when the paper is accepted. The complied version and related exe file are released at first for testing.
+
 
 ## Introduction
 
+This work is an improved version based on [KSS-ICP](https://github.com/vvvwo/KSS-ICP). It can be used to register point clouds with large difference of poses, different scales, noisy points, and defective parts at the same time. With a well designed GPU-based structure, the computational efficiency is improved obviously.
+
+## Citation
+If you find our work useful in your research, please consider citing:
+
+    @article{lv2023kss,
+         title={KSS-ICP: Point Cloud Registration Based on Kendall Shape Space},
+         author={Lv, Chenlei and Lin, Weisi and Zhao, Baoquan},
+         journal={IEEE Transactions on Image Processing},
+         volume={32},
+         pages={1681--1693},
+         year={2023},
+         publisher={IEEE}
+    }
+
 ## Comparsions
+
+In this part, we introduce some selected methods to estbalish comparsions in different registration tasks. Test datasets and codes of all selected methods are provided in this repository. Some registration instances and related quantitative anlayis reports are shown at the same time. We hope such data can help some ones who are focus on point cloud-based registration research work.  
+
+### Selected Methods:
 
 | Paper | Method | Type | Published | Code | Keywords | 
 | ----------- | ---------- | ------------| ---------- | ------ | ------ |
-| [arXiv](https://arxiv.org/abs/2204.08958) | MANIQA | NR | CVPRW2022 | [Official](https://github.com/IIGROUP/MANIQA) | Transformer, multi-dimension attention, dual branch |
-| [arXiv](https://arxiv.org/abs/2108.06858) | TReS | NR | WACV2022 | [Official](https://github.com/isalirezag/TReS) | Transformer, relative ranking, self-consistency |
-| [pdf](https://www.bmvc2021-virtualconference.com/assets/papers/0868.pdf) | KonIQ++ | NR | BMVC2021 | [Official](https://github.com/SSL92/koniqplusplus) | Multi-task with distortion prediction 
-| [arXiv](https://arxiv.org/abs/2108.05997) | MUSIQ | NR | ICCV2021 | [Official](https://github.com/google-research/google-research/tree/master/musiq) / [Pytorch](https://github.com/anse3832/MUSIQ) | Multi-scale, transformer, Aspect Ratio Preserved (ARP) resizing
-| [arXiv](https://arxiv.org/abs/2108.07948) | CKDN | NR | ICCV2021 | [Official](https://github.com/researchmm/CKDN) | Degraded reference, Conditional knowledge distillation (related to HIQA)
-| [pdf](https://openaccess.thecvf.com/content_CVPR_2020/papers/Su_Blindly_Assess_Image_Quality_in_the_Wild_Guided_by_a_CVPR_2020_paper.pdf) | HyperIQA | NR | CVPR2020 | [Official](https://github.com/SSL92/hyperIQA) | Content-aware hyper network 
-| [arXiv](https://arxiv.org/abs/2004.05508) | Meta-IQA | NR | CVPR2020 | [Official](https://github.com/zhuhancheng/MetaIQA) | Meta-learning 
-| [arXiv](https://arxiv.org/abs/2003.08932) | GIQA | NR | ECCV2020 | [Official](https://github.com/cientgu/GIQA) | Generated image 
-| [arXiv](https://arxiv.org/abs/1809.07517) | PI | NR | 2018 PIRM Challenge | [Project](https://github.com/roimehrez/PIRM2018) | 1/2 * (NIQE + (10 - NRQM)). 
-| [arXiv](https://arxiv.org/abs/1804.01681) | HIQA | NR | CVPR2018 | [Project](https://kwanyeelin.github.io/projects/HIQA/HIQA.html) | Hallucinated reference 
-| [arXiv](https://arxiv.org/pdf/1805.08493v1.pdf) | BPSQM | NR | CVPR2018 | []() | Pixel-wise quality map 
-| [arXiv](https://arxiv.org/abs/1707.08347) | RankIQA | NR | ICCV2017 | [Github](https://github.com/xialeiliu/RankIQA) | Pretrain on synthetically ranked data 
-| [pdf](https://openaccess.thecvf.com/content_cvpr_2014/papers/Kang_Convolutional_Neural_Networks_2014_CVPR_paper.pdf) | CNNIQA | NR | CVPR2014 | [PyTorch](https://github.com/lidq92/CNNIQA) | First CNN-based NR-IQA 
-| []() | | | | []() | 
-| [arXiv](https://arxiv.org/abs/2005.13983) | UNIQUE | NR | TIP2021 | [Github](https://github.com/zwx8981/UNIQUE) | Combine synthetic and authentic image pairs 
-| [arXiv](https://arxiv.org/pdf/1907.02665.pdf) | DBCNN | NR | TCSVT2020 | [Official](https://github.com/zwx8981/DBCNN-PyTorch) | Two branches for synthetic and authentic distortions 
-| [pdf](http://www.jdl.link/doc/2011/20191226_08489929.pdf) | SFA | NR | TMM2019 | [Official](https://github.com/lidq92/SFA) | Aggregate ResNet50 features of multiple cropped patches
-| [pdf](https://drive.google.com/file/d/1tMjcllKP8SzTn-dWVmogxaCLpzL1L7nO/view)/[arXiv](https://arxiv.org/abs/1708.08190) | PQR | NR/Aesthetic | TIP2019 | [Official1](https://github.com/HuiZeng/Unified_IAA)/[Official2](https://github.com/HuiZeng/BIQA_Toolbox) | Unify different type of aesthetic labels 
-| [arXiv](https://arxiv.org/abs/1612.01697) | WaDIQaM (deepIQA) | NR/FR | TIP2018 | [PyTorch](https://github.com/lidq92/WaDIQaM) | Weighted average of patch qualities, shared FR/NR models 
-| [pdf](https://ieeexplore.ieee.org/ielx7/83/8347140/08352823.pdf) | NIMA | NR | TIP2018 | [PyTorch](https://github.com/kentsyx/Neural-IMage-Assessment)/[Tensorflow](https://github.com/idealo/image-quality-assessment) | Squared EMD loss 
-| [pdf](https://ece.uwaterloo.ca/~z70wang/publications/TIP_E2E_BIQA.pdf) | MEON | NR | TIP2017 | | Multi-task: distortion learning and quality prediction
-| [arXiv](https://arxiv.org/abs/1904.06505) | dipIQ | NR | TIP2017 | [download](https://ece.uwaterloo.ca/~k29ma/codes/dipIQ.rar) | Similar to RankIQA
-| []() | | | | []() | 
-| [arXiv](https://arxiv.org/abs/1612.05890) | NRQM (Ma) | NR | CVIU2017 | [Project](https://sites.google.com/site/chaoma99/sr-metric) | Traditional, Super resolution 
-| [arXiv](https://arxiv.org/abs/1609.04757) | FRIQUEE | NR | JoV2017 | [Official](https://github.com/utlive/FRIQUEE) | Authentically Distorted, Bag of Features
-| [IEEE](https://ieeexplore.ieee.org/document/7501619) | HOSA | NR | TIP2016 | [Matlab download](https://ieeexplore.ieee.org/document/7501619) | Traditional 
-| [pdf](https://live.ece.utexas.edu/publications/2015/zhang2015feature.pdf) | ILNIQE | NR | TIP2015 | [Official](http://www4.comp.polyu.edu.hk/~cslzhang/IQA/ILNIQE/ILNIQE.htm) | Traditional 
-| [pdf](https://live.ece.utexas.edu/publications/2012/TIP%20BRISQUE.pdf) | BRISQUE | NR | TIP2012 | [Official](https://github.com/utlive/BRISQUE) | Traditional 
-| [pdf](https://live.ece.utexas.edu/publications/2012/saad_2012_tip.pdf) | BLIINDS-II | NR | TIP2012 | [Official](https://github.com/utlive/BLIINDS2) | 
-| [pdf](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.359.7510&rep=rep1&type=pdf) | CORNIA | NR | CVPR2012 | [Matlab download](https://github.com/HuiZeng/BIQA_Toolbox) | Codebook Representation 
-| [pdf](https://live.ece.utexas.edu/publications/2013/mittal2013.pdf) | NIQE | NR | SPL2012 | [Official](https://github.com/utlive/niqe) | Traditional 
-| [pdf](https://www.imaging.utk.edu/research/wcho/references/2011%20TIP%20BLINDS2.pdf) | DIIVINE | NR | TIP2011 | [Official](https://github.com/utlive/DIIVINE) | 
+| [pdf](https://www.cvl.iis.u-tokyo.ac.jp/class2004/wedenesday/report/besl.pdf) | ICP | Distance Metric | TPAMI1992 | [PCL](https://pointclouds.org/documentation/group__registration.html) | iterative closest point |
+| [pdf](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=1f16244ce2e78881c7c96b33796a930ce73f7972) | NDT | Feature-based | IROS2003 | [PCL](https://pointclouds.org/documentation/group__registration.html) | normal distributions transform |
+| [pdf](https://d1wqtxts1xzle7.cloudfront.net/57266988/%E9%85%8D%E5%87%861-s2.0-S0020025516300378-main-libre.pdf?1535550009=&response-content-disposition=inline%3B+filename%3DA_fast_and_robust_local_descriptor_for_3.pdf&Expires=1695559709&Signature=GfZiqp7Tdw7U-y2mFA0Qm2CVGMULmiKoecgzpeHe5xUAc9NZquvmf-fwND9X23l6KcBp9WSbuA4~o0o6xnX47~6031pWgIPlrnBiLVAensxI47G9UoDRxOHlRtjyQtGGN9~~-OdDUGQAeCDGN1GdNmgjTGnZkurPGiN8RAw3eFCorLrwrDAofJPw-hWdmwkfe~iMev866eK02-ujeiryPSb5Br3L-xRSwG7C9DmV2cZneJAm7bFo9f0c8zVb6HfRRHMHjOsFWDkKrnLJR8t~LOOeJz8JWhrXY73InpzzDA35GdkXgomhm7mJheMHuZyjsMjUMF1l5okvROvVrjryHw__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA) | FPFH | Feature-based | Information Sciences2016 | [PCL](https://pointclouds.org/documentation/group__registration.html) | local descriptor, FEATURE HISTOGRAMS |
+| [arvix](https://arxiv.org/abs/1605.03344) | Go-ICP | Distance Metric | TPAMI2016 | [Official](https://github.com/yangjiaolong/Go-ICP) | ICP, Global Searching |
+| [cvf](https://openaccess.thecvf.com/content_CVPR_2019/papers/Aoki_PointNetLK_Robust__Efficient_Point_Cloud_Registration_Using_PointNet_CVPR_2019_paper.pdf) | PointNetLK | Deep Learning | CVPR2019 | [Github](https://github.com/hmgoforth/PointNetLK) | PointNet, Lucas&Kanade|
+| [arvix](https://arxiv.org/pdf/2007.07627.pdf) | Fast-ICP | Distance Metric | TPAMI2022 | [Official](https://github.com/yaoyx689/Fast-Robust-ICP) | Majorization-minimization, Welsch’s function|
+| [arvix](https://arxiv.org/pdf/2007.07627.pdf) | Robust-ICP | Distance Metric | TPAMI2022 | [Official](https://github.com/yaoyx689/Fast-Robust-ICP) | Majorization-minimization, Welsch’s function|
+| [cvf](https://openaccess.thecvf.com/content/CVPR2022/papers/Qin_Geometric_Transformer_for_Fast_and_Robust_Point_Cloud_Registration_CVPR_2022_paper.pdf) | Geo-Transformer | Deep Learning | CVPR2022  | [Official](https://github.com/qinzheng93/GeoTransformer) | Transformer, RANSAC |
+| [cvf](https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_3D_Registration_With_Maximal_Cliques_CVPR_2023_paper.pdf) | Maximal Cliques | Feature-based | CVPR2023 | [Official](https://github.com/zhangxy0517/3D-Registration-with-Maximal-Cliques) | Maximal Cliques (**Best Student Paper**) |
+| [pdf](https://aliexken.github.io/papers/2022_KSS.pdf) | KSS-ICP | Distance Metric | TIP2023 | [Official](https://github.com/vvvwo/KSS-ICP) | Kendall Shape Space |
 <!-- | []() | | NR | | []() |  -->
 
+### Visualization
+
+<img width="945" alt="image" src="https://github.com/vvvwo/PKSS-Align/assets/65271555/48f1b19e-9ac8-4695-9bf3-ed31ba773786">
+
+<img width="1035" alt="image" src="https://github.com/vvvwo/PKSS-Align/assets/65271555/58becd06-5cbe-41e1-be6f-addfb94a7603">
+
+### Test Report:
+We test selected methods and PKSS-Align in the two datasets: [ModelNet40](https://modelnet.cs.princeton.edu/) and [S3DIS](http://buildingparser.stanford.edu/dataset.html#Download).
+
+The registration test datasets have been prepared ([here](https://share.weiyun.com/HEq6xgF8)), which contains different source point clouds with various influnece factors, template point clouds, and related ground truth transformations.
+
+The quantitative anlaysis results are shown in following tables:
+
+**Table1: Test Report on ModelNet40 with similarity transformations:**
+| Method | Time | MSE | MSE(n) | GT_cos |
+| ----------- | ---------- | ------------| ---------- | ------ |
+| ICP | 1.981s | 0.01253 | 0.6915 | 0.4259 | 
+| NDT | 3.719s | 0.01157 | 0.6735 | 0.4079 | 
+| FPFH | 16.665s | 0.00106 | 0.2163 | 0.6837 | 
+| Go-ICP | 33.101s | **0.00014** | 0.0885 | 0.7824 | 
+| PointNetLK | 0.903s | 0.02621 | 0.7476 | 0.3871 | 
+| Fast-ICP | 6.798s | 0.00808 | 0.5255 | 0.4668 | 
+| Robust-ICP | 22.921s | 0.01207 | 0.4849 | 0.4838 | 
+| Geo-Transformer | **0.563s** | 0.09309 | 0.8018 | 0.4776 | 
+| Maximal-Cliques | 2.513s | 0.02898 | 0.4558 | 0.6688 | 
+| []() |  | []() |
+| KSS-ICP | 2.899s | 0.00033 | 0.1233 | 0.7648 | 
+| PKSS-Align | 2.938s | 0.00051 | **0.0589** | **0.9026** | 
+<!-- | []() | | NR | | []() |  -->
+
+Test Report on S3DIS:
