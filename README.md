@@ -42,9 +42,9 @@ In this part, we introduce some selected methods to estbalish comparsions in dif
 
 ### Visualization
 
-<img width="945" alt="image" src="https://github.com/vvvwo/PKSS-Align/assets/65271555/48f1b19e-9ac8-4695-9bf3-ed31ba773786">
+<img width="1280" alt="image" src="https://github.com/vvvwo/PKSS-Align/assets/65271555/af1b4e05-3f15-4038-bb12-e78ef6c6bae1">
 
-<img width="1035" alt="image" src="https://github.com/vvvwo/PKSS-Align/assets/65271555/58becd06-5cbe-41e1-be6f-addfb94a7603">
+<img width="1051" alt="image" src="https://github.com/vvvwo/PKSS-Align/assets/65271555/84c2d085-27de-4c1c-ac55-9ad5ce878b10">
 
 ### Test Report:
 We test selected methods and PKSS-Align in the two datasets: [ModelNet40](https://modelnet.cs.princeton.edu/) and [S3DIS](http://buildingparser.stanford.edu/dataset.html#Download).
