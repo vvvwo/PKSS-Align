@@ -70,4 +70,3 @@ The quantitative anlaysis results are shown in following tables:
 | PKSS-Align | 2.938s | 0.00051 | **0.0589** | **0.9026** | 
 <!-- | []() | | NR | | []() |  -->
 
-Test Report on S3DIS:
