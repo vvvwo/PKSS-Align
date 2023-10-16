@@ -8,7 +8,7 @@ It is an implementation for the paper “PKSS-Align”. The source code will be 
 This work is an improved version based on [KSS-ICP](https://github.com/vvvwo/KSS-ICP). It can be used to register point clouds with large difference of poses, different scales, noisy points, and defective parts at the same time. With a well designed GPU-based structure, the computational efficiency is improved obviously.
 
 ## Citation
-If you find our work useful in your research, please consider citing:
+If you find our work useful for your research, please consider citing:
 
     @article{lv2023kss,
          title={KSS-ICP: Point Cloud Registration Based on Kendall Shape Space},
