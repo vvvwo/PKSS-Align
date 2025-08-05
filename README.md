@@ -1,7 +1,6 @@
-# PKSS-Align: A New Registration Method
+# PKSS-Align: Robust Point Cloud Registration on Pre-Kendall Shape Space
 
-It is an implementation for the paper “PKSS-Align”. The source code will be released when the paper is accepted. The complied version and related exe file are released at first for testing.
-
+It is an implementation for the paper “PKSS-Align: Robust Point Cloud Registration on Pre-Kendall Shape Space”, which has been accepted by IEEE TVCG. The complied version and related exe file are released at first for testing.
 
 ## Introduction
 
