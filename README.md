@@ -9,6 +9,13 @@ This work is an improved version based on [KSS-ICP](https://github.com/vvvwo/KSS
 ## Citation
 If you find our work useful for your research, please consider citing:
 
+    @article{lv2025pkss,
+          title={PKSS-Align: Robust Point Cloud Registration on Pre-Kendall Shape Space},
+          author={Lv, Chenlei and Huang, Hui},
+          journal={arXiv preprint arXiv:2508.04286},
+          year={2025}
+    }
+
     @article{lv2023kss,
          title={KSS-ICP: Point Cloud Registration Based on Kendall Shape Space},
          author={Lv, Chenlei and Lin, Weisi and Zhao, Baoquan},
